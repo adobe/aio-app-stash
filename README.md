@@ -13,8 +13,8 @@ The action code depends on a specific branch of the @adobe/aio-lib-files
 
 You will need to check it out locally and npm link it for this to work.
 
-  npm i
-  npm link
-  cd ../aio-app-stash
-  npm link @adobe/aio-lib-file
+    npm i
+    npm link
+    cd ../aio-app-stash
+    npm link @adobe/aio-lib-file
 

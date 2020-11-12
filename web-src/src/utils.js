@@ -28,7 +28,6 @@ async function actionWebInvoke (actionUrl, headers = {}, params = {}) {
     headers: actionHeaders,
     body: JSON.stringify(params)
   })
-  console.log('response = ', response)
   let content = await response.text()
   if (!response.ok) {
     throw new Error(`failed request to '${actionUrl}' with status: ${response.status} and message: ${content}`)
