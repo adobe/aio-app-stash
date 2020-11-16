@@ -20,6 +20,17 @@ packages:
         annotations:
           require-adobe-auth: true
           final: true
+      file-gen-url:
+        function: actions/file-gen-url/index.js
+        web: 'yes'
+        runtime: 'nodejs:12'
+        inputs:
+          LOG_LEVEL: debug
+          expiryInSeconds: 120
+          permissions: 'rwd'
+        annotations:
+          require-adobe-auth: true
+          final: true
       file-post:
         function: actions/file-post/index.js
         web: 'yes'
