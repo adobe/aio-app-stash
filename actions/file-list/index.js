@@ -30,14 +30,8 @@ async function main (params) {
     const namespace = params.owNamespace
 
     const files = await filesLib.init({ ow: { namespace, auth } })  
-    // generate some files
-
-    // const fileName = Math.random().toString(36).substring(2,15)
-    // await files.write(`dir/${param}.txt`, 'some private content')
-    // await files.write(`public/${param}.html`, '<h1>I am public!</h1>')
   
     const pathList = await files.list(filePath)
-    console.log("pathList = ", pathList)
 
     let fileTree = [];
     let level = {fileTree};
