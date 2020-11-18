@@ -8,6 +8,7 @@
     "@adobe/aio-sdk": "^2.3.1",
     "@adobe/exc-app": "^0.2.21",
     "@adobe/react-spectrum": "^3.4.0",
+    "@rooks/use-localstorage": "^3.6.0",
     "@spectrum-icons/illustrations": "^3.2.0",
     "@spectrum-icons/workflow": "^3.2.0",
     "core-js": "^3.6.4",
