@@ -75,23 +75,8 @@ function TreeNode(props) {
   }
 
   const detailsView = (node) => {
-    return (<span activeClassName="is-selected" onClick={showDetails}>&nbsp;&nbsp;{node.name}</span>)
+    return (<span onClick={showDetails}>&nbsp;&nbsp;{node.name}</span>)
   }
-
-  // const detailsView = (node) => {
-  //   // todo: format this, size in bytes/kb/mb/ ...
-  //   // format dates
-  //   return ( <Flex direction="column" width="size-2000">
-  //     <Well>
-  //     <View>path: { node.name }</View>
-  //     <View>size: { node.contentLength} bytes</View>
-  //     <View>created: {timeSince(node.creationTime)}</View>
-  //     <View>modified: {timeSince(node.lastModified)}</View>
-  //     <View>etag: {node.etag}</View>
-  //     <View>contentType: {node.contentType}</View>
-  //     </Well>
-  //   </Flex>)
-  // }
 
   let childNodes;
   if (props.node.children != null) {

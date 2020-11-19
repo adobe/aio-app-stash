@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import { actionWebInvoke } from '../utils'
@@ -12,11 +12,12 @@ import {
 } from '@adobe/react-spectrum'
 
 const OWCredsForm = (props) => {
+
   const [state, setState] = useState({
-    namespace: null,
-    namespaceValid: null,
-    auth: null,
-    authValid: null
+    namespace: props.owCreds.namespace,
+    namespaceValid: /^[a-z0-9\-_]{3,63}$/.test(props.owCreds.namespace),
+    auth: props.owCreds.auth,
+    authValid: /^[a-zA-Z0-9\-_:]+$/.test(props.owCreds.auth)
   })
 
   return (
@@ -30,6 +31,7 @@ const OWCredsForm = (props) => {
           label='namespace'
           placeholder='namespace'
           validationState={state.namespaceValid}
+          value={state.namespace}
           onChange={(input) => {
             // todo check regex
             const namespaceValid = /^[a-z0-9\-_]{3,63}$/.test(input)
@@ -45,6 +47,7 @@ const OWCredsForm = (props) => {
           label='auth'
           placeholder='auth'
           validationState={state.authValid}
+          value={state.auth}
           onChange={(input) => {
             const authValid = /^[a-zA-Z0-9\-_:]+$/.test(input)
             const auth = (authValid && input) || null
@@ -52,9 +55,14 @@ const OWCredsForm = (props) => {
           }}
         />
 
-        <Button variant='primary' maxWidth='100px' onPress={() => setCredentials(state.namespace, state.auth)}
+        <Button variant='secondary' maxWidth='100px'
+          onPress={() => setCredentials('', '')}
+          isDisabled={!(state.auth || state.namespace)}>Clear</Button>
+        <Button variant='primary' maxWidth='100px'
+          onPress={() => setCredentials(state.namespace, state.auth)}
           isDisabled={!(state.authValid && state.namespaceValid)}>Connect</Button>
       </Form>
+
 
       {state.listResponseError && (
         <View backgroundColor='negative' padding='size-50' maxWidth='size-2500' marginTop='size-100' marginBottom='size-100' borderRadius='small'>
@@ -64,7 +72,6 @@ const OWCredsForm = (props) => {
     </View>
   )
 
-  // invokes a the selected backend actions with input headers and params
   async function setCredentials (namespace, auth) {
     if (props.onCredentialsChange) {
       props.onCredentialsChange({
@@ -72,13 +79,11 @@ const OWCredsForm = (props) => {
         auth:auth
       })
     }
+    setState({ namespace,
+      namespaceValid: /^[a-z0-9\-_]{3,63}$/.test(namespace),
+      auth,
+      authValid: /^[a-zA-Z0-9\-_:]+$/.test(auth) })
   }
 }
-
-// cloudStateLoader.propTypes = {
-//   onLoadingCloudStates: PropTypes.func,
-//   onDoneLoadingCloudStates: PropTypes.func,
-//   onReceivedCloudStates: PropTypes.func
-// }
 
 export default OWCredsForm

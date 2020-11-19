@@ -52,12 +52,13 @@ function FileDetailsView(props) {
   if (props.selectedFile ) {
     return (
       <Content>
-      <View>path: { props.selectedFile.name }</View>
+      {/* <View>path: { props.selectedFile.name }</View>
       <View>size: { props.selectedFile.contentLength} bytes</View>
       <View>created: {timeSince(props.selectedFile.creationTime)}</View>
       <View>modified: {timeSince(props.selectedFile.lastModified)}</View>
       <View>etag: {props.selectedFile.etag}</View>
-      <View>contentType: {props.selectedFile.contentType}</View>
+      <View>contentType: {props.selectedFile.contentType}</View> */}
+      <pre>{JSON.stringify(props.selectedFile, '\n', 4)}</pre>
     </Content>
     )
   } else {

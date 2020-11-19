@@ -9,11 +9,16 @@ import { About } from './About'
 import FilesView from './FilesView'
 import OWCredsForm from './OWCredsForm'
 
-import CloudStateLoader from './CloudStateLoader'
-import CloudStateVisualizer from './CloudStateVisualizer'
+import StatesView from './StatesView'
+import useLocalstorage from "@rooks/use-localstorage"
 
 function App (props) {
-  const [owCreds, setOwCreds] = useState({
+  // const [owCreds, setOwCreds] = useState({
+  //   namespace:'',
+  //   auth:''
+  // })
+
+  const [owCreds, setOwCreds, removeOwCreds] = useLocalstorage("owCreds", {
     namespace:'',
     auth:''
   })
@@ -49,7 +54,7 @@ function App (props) {
                 columnGap="size-100">
                 <SideBar></SideBar>
                 <Divider size="M" />
-                <OWCredsForm onCredentialsChange={onCredsChange} />
+                <OWCredsForm owCreds={owCreds} onCredentialsChange={onCredsChange} />
                 <Divider size="M" />
               </Flex>
             </View>
@@ -62,7 +67,7 @@ function App (props) {
                   <FilesView owCreds={owCreds} runtime={props.runtime} ims={props.ims}></FilesView>
                 </Route>
                 <Route path='/cloud-state'>
-                  <CloudStateVisualizer runtime={props.runtime} ims={props.ims} />
+                  <StatesView owCreds={owCreds} runtime={props.runtime} ims={props.ims} />
                 </Route>
                 <Route path='/about'>
                   <About></About>
