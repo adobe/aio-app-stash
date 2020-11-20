@@ -49,7 +49,7 @@ function FilesView(props) {
         headers['x-gw-ims-org-id'] = props.ims.org
       }
       // // invoke backend action
-      actionWebInvoke(actions['file-list'], headers, params)
+      actionWebInvoke(actions['aioappstash-0.0.1/file-list'], headers, params)
         .then((actionResponse) => {
           console.log('actionResponse: ', actionResponse)
           setState({
