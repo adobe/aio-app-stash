@@ -13,12 +13,21 @@ import {
 
 const OWCredsForm = (props) => {
 
-  const [state, setState] = useState({
-    namespace: props.owCreds.namespace,
-    namespaceValid: /^[a-z0-9\-_]{3,63}$/.test(props.owCreds.namespace),
-    auth: props.owCreds.auth,
-    authValid: /^[a-zA-Z0-9\-_:]+$/.test(props.owCreds.auth)
-  })
+  let initialState = {
+    namespaceValid:false,
+    authValid:false,
+    namespace:'',
+    auth:''
+  }
+  if(props.owCreds) {
+    initialState = {
+      namespace: props.owCreds.namespace ,
+      namespaceValid: /^[a-z0-9\-_]{3,63}$/.test(props.owCreds.namespace),
+      auth: props.owCreds.auth,
+      authValid: /^[a-zA-Z0-9\-_:]+$/.test(props.owCreds.auth)
+    }
+  }
+  const [state, setState] = useState(initialState)
 
   return (
     <View>
