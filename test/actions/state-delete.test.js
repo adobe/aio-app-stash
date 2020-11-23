@@ -1,6 +1,3 @@
-/*
-* <license header>
-*/
 
 jest.mock('@adobe/aio-sdk', () => ({
   Core: {

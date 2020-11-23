@@ -1,6 +1,3 @@
-/*
-* <license header>
-*/
 
 jest.setTimeout(10000)
 

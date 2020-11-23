@@ -1,6 +1,3 @@
-/*
-* <license header>
-*/
 
 /* global fetch */
 

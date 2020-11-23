@@ -1,6 +1,3 @@
-/* 
-* <license header>
-*/
 
 const utils = require('../../actions/utils')
 

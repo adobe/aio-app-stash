@@ -1,6 +1,3 @@
-/* 
-* <license header>
-*/
 
 const { Config } = require('@adobe/aio-sdk').Core
 const fs = require('fs')

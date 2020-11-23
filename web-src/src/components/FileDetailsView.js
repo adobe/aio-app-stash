@@ -1,31 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { ActionButton,
-  Dialog,
-  Heading,
-  Header,
-  Content,
-  DialogTrigger,
-  ListBox,
-  Item,
-  View,
-  Text,
-  Tooltip,
-  TooltipTrigger,
-  Divider,
-  Flex,
-  Tree,
-  Well } from '@adobe/react-spectrum'
-import {
-  AiOutlineFolderAdd,
-  AiOutlineFileAdd,
-  AiOutlineFile,
-  AiOutlineFolder,
-  AiOutlineFolderOpen,
-  AiOutlineDelete,
-  AiOutlineEdit,
-} from "react-icons/ai"
+import { Content } from '@adobe/react-spectrum'
 
 function timeSince(_date) {
   let date = new Date(_date).getTime()

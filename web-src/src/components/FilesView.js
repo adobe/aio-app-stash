@@ -7,14 +7,9 @@ import {
   Flex,
   Grid,
   Heading,
-  Form,
-  Picker,
-  TextArea,
-  Button,
   Content,
   ProgressCircle,
   IllustratedMessage,
-  Item,
   Text,
   View
 } from '@adobe/react-spectrum'

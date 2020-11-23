@@ -13,10 +13,6 @@ import StatesView from './StatesView'
 import useLocalstorage from "@rooks/use-localstorage"
 
 function App (props) {
-  // const [owCreds, setOwCreds] = useState({
-  //   namespace:'',
-  //   auth:''
-  // })
 
   const [owCreds, setOwCreds, removeOwCreds] = useLocalstorage("owCreds", {
     namespace:'',
