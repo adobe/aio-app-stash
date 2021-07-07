@@ -27,7 +27,7 @@ const StatesView = (props) => {
         headers['x-gw-ims-org-id'] = props.ims.org
       }
       // // invoke backend action
-      actionWebInvoke(actions['aioappstash-0.0.1/state-list'], headers, params)
+      actionWebInvoke(actions['state-list'], headers, params)
         .then((actionResponse) => {
           console.log('actionResponse: ', actionResponse)
           setCloudStateKeys(actionResponse.keys)
@@ -108,7 +108,7 @@ const StatesView = (props) => {
         headers['x-gw-ims-org-id'] = ims.org
       }
       // // invoke backend action
-      actionWebInvoke(actions['aioappstash-0.0.1/state-get'], headers, params)
+      actionWebInvoke(actions['state-get'], headers, params)
         .then((actionResponse) => {
           // console.log('actionResponse: ', actionResponse)
           setSelectedCloudState({ ...actionResponse })
