@@ -8,13 +8,6 @@ export const About = () => (
       <ul style={{ listStyle: 'none' }}>
         <li>
           <Link>
-            <a href='https://github.com/AdobeDocs/project-firefly/blob/master/README.md#project-firefly-developer-guide' target='_blank'>
-              Firefly Apps
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link>
             <a href='https://github.com/adobe/aio-sdk#adobeaio-sdk' target='_blank'>
               Adobe I/O SDK
             </a>
