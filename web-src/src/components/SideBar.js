@@ -20,10 +20,6 @@ function SideBar () {
         <NavLink className="SideNav-itemLink" activeClassName="is-selected" 
           aria-current="page" to="/cloud-state">Cloud State</NavLink>
       </li>
-      <li className="SideNav-item">
-        <NavLink className="SideNav-itemLink" activeClassName="is-selected" 
-          aria-current="page" to="/about">About Project Firefly Apps</NavLink>
-      </li>
     </ul>
     </View>
   )
