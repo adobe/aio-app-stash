@@ -1,6 +1,6 @@
 # aio-app-stash
 
-App Stash is a FireFly app that provides a Files and State browser for your FireFly application.
+App Stash is a single page app (SPA) that provides a Files and State browser for your .
 Enter your credentials to connect to your application deployment and navigate your public + private file store, and observe what keys/values are being stored in state store.
 
 This app provides a sample implementation to most of the FilesSDK and StateSDK
